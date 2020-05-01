@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link a href="CSS/bootstrap.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" a href="CSS/bootstrap.css"/>
     <title>Registration Form</title>
 </head>
 <body class="bg-dark">
@@ -18,9 +18,10 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="insert.php" method="post">
-                        <input class="form-control mb-2" name="name" placeholder=" User Name " type="text">
-                        <input class="form-control mb-2" name="email" placeholder=" User Email " type="email">
+                    <form action="insert_course.php" method="post">
+                        <input type="text" class="form-control mb-2" placeholder=" Course Name " name="coursename">
+                        <input type="text" class="form-control mb-2" placeholder=" Course Class " name="courseclass">
+                        <input type="text" class="form-control mb-2" placeholder=" Course Date " name="coursedate">
                         <button class="btn btn-primary" name="submit">Submit</button>
                     </form>
 

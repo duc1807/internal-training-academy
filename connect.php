@@ -1,10 +1,20 @@
 <?php
+/* Note: Development of this application is strongly reliant on XAMPP
+         for this reason, these configurations below are defined for PHPMyAdmin
+ */
 
-    $conn=mysqli_connect("localhost","root","","asm");
-    if(!$conn)
-    {
-        die(" Connection Error ");
-    }
-// or die là phương thức để kiểm tra kết nối 
-//mysqli_query($conn); "SET NAMES 'UTF8'" // có thể thêm hoặc k dùng tr trường hợp cơ sở dữ liệu có kí tự đặc biệt dạng uft-8 thì truy vấn hoặc cập nhật k bị lỗi font.
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'asm';
+$port = 3306;
+
+$conn = new mysqli($hostname, $username, $password, $dbname, $port);
+
+if (!$conn) {
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    die("Unable to connect to MySQL database!");
+}
+
+//mysqli_query($conn); "SET NAMES 'UTF8'" may be needed in case database having UTF-8 encoded characters
 ?> 
