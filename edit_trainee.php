@@ -2,7 +2,7 @@
 
     require_once("connect.php");
     $UserID = $_GET['GetID'];
-    $query = " select * from trainee where User_ID='".$UserID."'";
+    $query = " SELECT * FROM trainee WHERE User_ID='".$UserID."'";
     $result = mysqli_query($conn,$query);
 
     while($row=mysqli_fetch_assoc($result))

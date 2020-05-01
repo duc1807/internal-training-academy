@@ -20,12 +20,12 @@ require_once './db.php';
 	    if($conn-> connect_error)
    {
 	// nếu như kết nối không thành công thì dừng chương trình 
-	    echo "Connection fail";
+	    echo "Failed connection";
 	//dừng chương trình
 	   die($conn-> connect_error);
 }
 // tạo câu truy vấn 
-$sql = "select * from account where username ='" .$user 
+$sql = "SELECT * FROM account where username ='" .$user 
 . "' and password='" . $pass . "'";
 
 $rows = query($sql);
@@ -47,7 +47,7 @@ else
 		<th>Password</th>
 	</tr>
 <?php
-	$sql =" Select * from account ";
+	$sql =" SELECT * FROM account ";
 	$rows = query($sql);
 	for ($i=0; $i<count($rows); $i++)
 {

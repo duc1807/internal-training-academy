@@ -2,7 +2,7 @@
 
     require_once("connect.php");
 
-    $query = " select * from records ";
+    $query = " SELECT * FROM records ";
     $result = mysqli_query($conn,$query);
 
 

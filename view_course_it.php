@@ -1,7 +1,7 @@
 <?php 
 
     require_once("connect.php");
-    $query = " select * from course_it ";
+    $query = " SELECT * FROM course_it ";
     $result = mysqli_query($conn,$query);
 
 ?>

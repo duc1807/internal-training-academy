@@ -1,7 +1,7 @@
 <?php 
 
     require_once("connect.php");
-    $query = " select * from topic";
+    $query = " SELECT * FROM topic";
     $result = mysqli_query($conn,$query);
 
 ?>

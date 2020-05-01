@@ -2,7 +2,7 @@
 
     require_once("connect.php");
     $CourseID = $_GET['GetID'];
-    $query = " select * from course_it where Course_ID ='".$CourseID."'";
+    $query = " SELECT * FROM course_it WHERE Course_ID ='".$CourseID."'";
     $result = mysqli_query($conn,$query);
 
     while($row=mysqli_fetch_assoc($result))

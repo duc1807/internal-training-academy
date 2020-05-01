@@ -2,7 +2,7 @@
 
     require_once("connect.php");
     $TopicID = $_GET['GetID'];
-    $query = " select * from topic where Topic_ID='".$TopicID."'";
+    $query = " SELECT * FROM topic WHERE Topic_ID='".$TopicID."'";
     $result = mysqli_query($conn,$query);
 
     while($row=mysqli_fetch_assoc($result))

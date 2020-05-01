@@ -1,7 +1,7 @@
 <?php 
 
     require_once("connect.php");
-    $query = " select * from attendance ";
+    $query = " SELECT * FROM attendance ";
     $result = mysqli_query($conn,$query);
 
 ?>

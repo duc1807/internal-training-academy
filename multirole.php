@@ -2,7 +2,7 @@
 session_start();
 require_once"connect.php";
 
-$message ="wrong username or password";
+$message ="Please re-check your login credentials!";
 $role = "" ;
 
 if(isset($_POST["btnLogin"]))
@@ -10,14 +10,15 @@ if(isset($_POST["btnLogin"]))
 	$username = $_POST["user"];
 	$password = $_POST["pass"];
 
-	$query = "SELECT * FROM account WHERE Username = '$username' 
-	AND  Password = '$password'";
+	$query = 
+	"SELECT * FROM account WHERE Username = '$username' 
+		AND Password = '$password'";
 
 	$result = mysqli_query($conn,$query);
 
 	if(mysqli_num_rows($result) > 0)
 	{
-		While($row = mysqli_fetch_assoc($result))
+		while($row = mysqli_fetch_assoc($result))
 		{
 			if($row["Role"]== "Admin")
 			{
@@ -31,7 +32,6 @@ if(isset($_POST["btnLogin"]))
 				$_SESSION['LoginUser'] = $row["Username"];
 				$_SESSION['role'] = $row["Role"];
 				header('location: user.php');
-
 			}
 			if($row["Role"]== "Trainer")
 			{
