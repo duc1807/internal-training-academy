@@ -1,6 +1,6 @@
 <?php
 
-require_once("connect.php");
+require_once("../utils/connect.php");
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['coursename']) || empty($_POST['courseclass']) || empty($_POST['coursedate'])) {

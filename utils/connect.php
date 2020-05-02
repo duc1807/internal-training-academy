@@ -13,8 +13,8 @@ $conn = new mysqli($hostname, $username, $password, $dbname, $port);
 
 if (!$conn) {
     echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    die("Unable to connect to MySQL database!");
+    die("Unable to connect to MySQL utils!");
 }
 
-//mysqli_query($conn); "SET NAMES 'UTF8'" may be needed in case database having UTF-8 encoded characters
+// "SET NAMES 'UTF8'" may be needed in case utils having UTF-8 encoded characters
 ?> 

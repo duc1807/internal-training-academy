@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="insert_course.php" method="post">
+                    <form action="controllers/create_course.php" method="post">
                         <input type="text" class="form-control mb-2" placeholder=" Course Name " name="coursename">
                         <input type="text" class="form-control mb-2" placeholder=" Course Class " name="courseclass">
                         <input type="text" class="form-control mb-2" placeholder=" Course Date " name="coursedate">

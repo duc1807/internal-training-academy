@@ -1,13 +1,13 @@
 <?php
 // Client-side homepage
-require_once('db.php');
+require_once("utils/db.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Dashboard - Secured Page</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
 <div class="form">

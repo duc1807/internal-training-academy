@@ -1,6 +1,6 @@
 <?php
 
-require_once("connect.php");
+require_once("utils/connect.php");
 $TopicID = $_GET['GetID'];
 $query = " SELECT * FROM topic WHERE Topic_ID='" . $TopicID . "'";
 $result = mysqli_query($conn, $query);
@@ -12,7 +12,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $TopicDate = $row['Topic_Datecreate'];
     $TopicExpired = $row['Topic_Expired'];
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +33,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
                 <div class="card-body">
 
-                    <form action="update_topic.php?ID=<?php echo $TopicID ?>" method="post">
+                    <form action="controllers/update_topic.php?ID=<?php echo $TopicID ?>" method="post">
                         <input type="text" class="form-control mb-2" placeholder=" Topic Name " name="topicname"
                                value="<?php echo $TopicName ?>" required>
                         <textarea type="text" class="form-control mb-2" placeholder=" Topic Explain "

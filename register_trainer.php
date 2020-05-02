@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="insert_trainer.php" method="post">
+                    <form action="controllers/create_trainer.php" method="post">
                         <div class="form-group">
                             <input type="text-center" name="name" class="
                                  form-control form-control-lg" placeholder="User Name" required>

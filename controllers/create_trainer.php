@@ -1,6 +1,6 @@
 <?php
 
-require_once("connect.php");
+require_once("../utils/connect.php");
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['name']) || empty($_POST['email'])) {

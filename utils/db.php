@@ -22,13 +22,13 @@ function query($sqlString)
 
     if ($conn->connect_error) {
         echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Unable to connect to the database";
+        echo "Unable to connect to the utils";
         die($conn->connect_error);
     }
 
     $result = $conn->query($sqlString);
     if (!$result) {
-        echo "Unable to execute the requested database query";
+        echo "Unable to execute the requested utils query";
         die ($conn->error);
     }
 

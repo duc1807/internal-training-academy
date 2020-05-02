@@ -1,5 +1,5 @@
 <?php
-require_once("connect.php");
+require_once("../utils/connect.php");
 
 if (isset($_GET['Del'])) {
     $CourseID = $_GET['Del'];

@@ -1,6 +1,6 @@
 <?php
 
-require_once("connect.php");
+require_once("../utils/connect.php");
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['topicname']) || empty($_POST['topicexplain']) || empty($_POST['topicdate']) || empty($_POST['topicexpired'])) {

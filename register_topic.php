@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="insert_topic.php" method="post">
+                    <form action="controllers/create_topic.php" method="post">
                         <div class="form-group">
                             <input type="text-center" name="topicname" class="
                                  form-control form-control-lg" placeholder="Topic Name" required>

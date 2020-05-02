@@ -1,6 +1,6 @@
 <?php
 
-require_once("connect.php");
+require_once("utils/connect.php");
 $query = " SELECT * FROM trainee ";
 $result = mysqli_query($conn, $query);
 
@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $query);
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/fav.png"/>
+    <link rel="shortcut icon" href="assets/img/fav.png"/>
     <!-- Author Meta -->
     <meta name="author" content="colorlib"/>
     <!-- Meta Description -->
@@ -35,15 +35,15 @@ $result = mysqli_query($conn, $query);
         CSS
         =============================================
       -->
-    <link rel="stylesheet" href="css/linearicons.css"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/magnific-popup.css"/>
-    <link rel="stylesheet" href="css/owl.carousel.css"/>
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/hexagons.min.css"/>
+    <link rel="stylesheet" href="assets/css/linearicons.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
+    <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body class="records">
 <!-- ================ Start Header Area ================= -->
@@ -51,7 +51,7 @@ $result = mysqli_query($conn, $query);
     <nav class="navbar navbar-expand-lg  navbar-light">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="img/gr.png" alt=""/>
+                <img src="assets/img/gr.png" alt=""/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,7 +104,7 @@ $result = mysqli_query($conn, $query);
             <div class="col-lg-5 col-md-8 home-banner-left">
             </div>
             <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
-                <img class="img-fluid" src="img/header-img.png" alt=""/>
+                <img class="img-fluid" src="assets/img/header-img.png" alt=""/>
             </div>
         </div>
     </div>
@@ -136,7 +136,7 @@ $result = mysqli_query($conn, $query);
                             <td><?php echo $UserName ?></td>
                             <td><?php echo $UserEmail ?></td>
                             <td><a href="edit_trainee.php?GetID=<?php echo $UserID ?>">Edit</a></td>
-                            <td><a href="delete_trainee.php?Del=<?php echo $UserID ?>">Delete</a></td>
+                            <td><a href="controllers/delete_trainee.php?Del=<?php echo $UserID ?>">Delete</a></td>
                         </tr>
                         <?php
                     }
@@ -227,23 +227,23 @@ $result = mysqli_query($conn, $query);
 </footer>
 <!-- ================ End footer Area ================= -->
 
-<script src="js/vendor/jquery-2.2.4.min.js"></script>
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/hexagons.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/main.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="assets/js/hexagons.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
 

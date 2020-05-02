@@ -5,7 +5,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/fav.png"/>
+    <link rel="shortcut icon" href="assets/img/fav.png"/>
     <!-- Author Meta -->
     <meta name="author" content="colorlib"/>
     <!-- Meta Description -->
@@ -22,15 +22,15 @@
         CSS
         =============================================
       -->
-    <link rel="stylesheet" href="css/linearicons.css"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/magnific-popup.css"/>
-    <link rel="stylesheet" href="css/owl.carousel.css"/>
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/hexagons.min.css"/>
+    <link rel="stylesheet" href="assets/css/linearicons.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
+    <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 
 <body>
@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-lg  navbar-light">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="img/gr.png" alt=""/>
+                <img src="assets/img/gr.png" alt=""/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +82,7 @@
             <div class="col-lg-5 col-md-8 home-banner-left">
             </div>
             <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
-                <img class="img-fluid" src="img/header-img.png" alt=""/>
+                <img class="img-fluid" src="assets/img/header-img.png" alt=""/>
             </div>
         </div>
     </div>
@@ -149,7 +149,7 @@
         <div class="owl-carousel popuar-course-carusel">
             <div class="single-popular-course">
                 <div class="thumb">
-                    <img class="f-img img-fluid mx-auto" src="img/popular-course/p1.jpg" alt=""/>
+                    <img class="f-img img-fluid mx-auto" src="assets/img/popular-course/p1.jpg" alt=""/>
                 </div>
                 <div class="details">
                     <div class="d-flex justify-content-between mb-20">
@@ -184,7 +184,7 @@
 
             <div class="single-popular-course">
                 <div class="thumb">
-                    <img class="f-img img-fluid mx-auto" src="img/popular-course/p2.jpg" alt=""/>
+                    <img class="f-img img-fluid mx-auto" src="assets/img/popular-course/p2.jpg" alt=""/>
                 </div>
                 <div class="details">
                     <div class="d-flex justify-content-between mb-20">
@@ -219,7 +219,7 @@
 
             <div class="single-popular-course">
                 <div class="thumb">
-                    <img class="f-img img-fluid mx-auto" src="img/popular-course/p3.jpg" alt=""/>
+                    <img class="f-img img-fluid mx-auto" src="assets/img/popular-course/p3.jpg" alt=""/>
                 </div>
                 <div class="details">
                     <div class="d-flex justify-content-between mb-20">
@@ -254,7 +254,7 @@
 
             <div class="single-popular-course">
                 <div class="thumb">
-                    <img class="f-img img-fluid mx-auto" src="img/popular-course/p4.jpg" alt=""/>
+                    <img class="f-img img-fluid mx-auto" src="assets/img/popular-course/p4.jpg" alt=""/>
                 </div>
                 <div class="details">
                     <div class="d-flex justify-content-between mb-20">
@@ -312,10 +312,10 @@
                 <div class="owl-carousel video-carousel">
                     <div class="single-video">
                         <div class="video-part">
-                            <img class="img-fluid" src="img/video-img.jpg" alt="">
+                            <img class="img-fluid" src="assets/img/video-img.jpg" alt="">
                             <div class="overlay"></div>
                             <a class="popup-youtube play-btn" href="https://www.youtube.com/watch?v=VufDd-QL1c0">
-                                <img class="play-icon" src="img/play-btn.png" alt="">
+                                <img class="play-icon" src="assets/img/play-btn.png" alt="">
                             </a>
                         </div>
                         <h4 class="text-white mb-20 mt-30">Learn Angular js Course for Legendary Persons</h4>
@@ -328,10 +328,10 @@
 
                     <div class="single-video">
                         <div class="video-part">
-                            <img class="img-fluid" src="img/video-img.jpg" alt="">
+                            <img class="img-fluid" src="assets/img/video-img.jpg" alt="">
                             <div class="overlay"></div>
                             <a class="popup-youtube play-btn" href="https://www.youtube.com/watch?v=VufDd-QL1c0">
-                                <img class="play-icon" src="img/play-btn.png" alt="">
+                                <img class="play-icon" src="assets/img/play-btn.png" alt="">
                             </a>
                         </div>
                         <h4 class="text-white mb-20 mt-30">Learn Angular js Course for Legendary Persons</h4>
@@ -462,7 +462,7 @@
                 <div class="col-lg-5">
                     <div class="item">
                         <div class="testi-item">
-                            <img src="img/quote.png" alt=""/>
+                            <img src="assets/img/quote.png" alt=""/>
                             <div class="mt-40 text">
                                 <p>
                                     As conscious traveling Paup ers we must always be oncerned
@@ -478,7 +478,7 @@
                 </div>
 
                 <div class="offset-lg-1 col-lg-6">
-                    <img src="img/testimonial/t1.jpg" alt=""/>
+                    <img src="assets/img/testimonial/t1.jpg" alt=""/>
                 </div>
             </div>
 
@@ -486,7 +486,7 @@
                 <div class="col-lg-5">
                     <div class="item">
                         <div class="testi-item">
-                            <img src="img/quote.png" alt=""/>
+                            <img src="assets/img/quote.png" alt=""/>
                             <div class="mt-40 text">
                                 <p>
                                     As conscious traveling Paup ers we must always be oncerned
@@ -502,7 +502,7 @@
                 </div>
 
                 <div class="offset-lg-1 col-lg-6">
-                    <img src="img/testimonial/t1.jpg" alt=""/>
+                    <img src="assets/img/testimonial/t1.jpg" alt=""/>
                 </div>
             </div>
         </div>
@@ -578,7 +578,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog-post">
-                    <img src="img/blog-post/b1.jpg" class="img-fluid" alt=""/>
+                    <img src="assets/img/blog-post/b1.jpg" class="img-fluid" alt=""/>
                     <div class="overlay"></div>
                     <div class="top-text">
                         <p>29th, oct, 2018</p>
@@ -602,7 +602,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mt--160">
                 <div class="single-blog-post">
-                    <img src="img/blog-post/b2.jpg" class="img-fluid" alt=""/>
+                    <img src="assets/img/blog-post/b2.jpg" class="img-fluid" alt=""/>
                     <div class="overlay"></div>
                     <div class="top-text">
                         <p>29th, oct, 2018</p>
@@ -626,7 +626,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mt--260">
                 <div class="single-blog-post">
-                    <img src="img/blog-post/b3.jpg" class="img-fluid" alt=""/>
+                    <img src="assets/img/blog-post/b3.jpg" class="img-fluid" alt=""/>
                     <div class="overlay"></div>
                     <div class="top-text">
                         <p>29th, oct, 2018</p>
@@ -731,23 +731,23 @@
 </footer>
 <!-- ================ End footer Area ================= -->
 
-<script src="js/vendor/jquery-2.2.4.min.js"></script>
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/hexagons.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/main.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="assets/js/hexagons.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 
 x

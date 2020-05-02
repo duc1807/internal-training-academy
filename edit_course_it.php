@@ -1,6 +1,6 @@
 <?php
 
-require_once("connect.php");
+require_once("utils/connect.php");
 $CourseID = $_GET['GetID'];
 $query = " SELECT * FROM course_it WHERE Course_ID ='" . $CourseID . "'";
 $result = mysqli_query($conn, $query);
@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
                 <div class="card-body">
 
-                    <form action="update_course_it.php?ID=<?php echo $CourseID ?>" method="post">
+                    <form action="controllers/update_course_it.php?ID=<?php echo $CourseID ?>" method="post">
                         <input type="text" class="form-control mb-2" placeholder="Course Name " name="coursename"
                                value="<?php echo $CourseName ?>">
                         <input type="text" class="form-control mb-2" placeholder="Course Class " name="courseclass"
