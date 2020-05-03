@@ -1,10 +1,6 @@
 # Internal Training Academy
 
-This is code submission for assignment 2 of *Application Development* course of Nguyen Anh Tu's group. Team members include: 
-
-- Nguyen Anh Tu: Team leader
-- Nguyen Duc Hoang Tung 
-- Hoang Minh Tu
+This is code submission for assignment 2 of *Application Development* course.
 
 ## Notes and comments
 - Development of this application is strongly reliant on `Apache HTTP Server`, `MySQL` server & `PHPMyAdmin` DBMS provided by `XAMPP`. For this reason, these configurations defined in [`db.php`](utils/db.php) and [`connect.php`](utils/connect.php) are defined exclusively for `PHPMyAdmin`.
