@@ -19,7 +19,7 @@ $resultDepartments = $conn->query($queryForDepartments);
     <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta name="author" content="Hoang Minh Tu"/>
 
-    <title>Edit Information: user <?php echo "\"" . $username . "\""; ?></title>
+    <title>Edit Information</title>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
@@ -43,7 +43,7 @@ $resultDepartments = $conn->query($queryForDepartments);
     <div class="container">
         <div class="row justify-content-center fullscreen align-items-center">
             <div class="col-lg-5 col-md-8 home-banner-left">
-                <h1 class="text-white">
+                <h1 class="text-white" id="banner-header">
                     Edit User Information of <?php echo "\"" . $username . "\""; ?>
                 </h1>
                 <p class="mx-auto text-white  mt-20 mb-40"></p>

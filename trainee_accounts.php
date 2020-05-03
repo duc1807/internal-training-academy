@@ -9,7 +9,6 @@ $query =
     INNER JOIN department ON trainee.department_id = department.id";
 $result = $conn->query($query);
 
-// In order to delete a Trainee, its account need to be removed
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +99,7 @@ $result = $conn->query($query);
                                             </a>
                                         </div>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-danger text-white" href="controllers/delete_account.php?id=<?php echo $row[7]; ?>">
+                                            <a class="btn btn-danger text-white" href="controllers/delete_trainee.php?id=<?php echo $row[0]; ?>">
                                                 Delete
                                             </a>
                                         </div>

@@ -19,7 +19,7 @@ while ($rowTrainee = $resultThisTrainee->fetch_array(MYSQL_NUM)) {
     $desc = $rowTrainee[7];
 }
 ?>
-<form action="controllers/update_trainee.php" method="POST" id="edit_trainee">
+<form action="controllers/update_trainee.php?user_id=<?php echo $trainee_user_id; ?>" method="POST" id="edit_trainee">
     <div class="row">
         <label for="fullname">Full Name (*)</label>
         <input type="text" class="form-control mb-2 mr-2" id="fullname"
@@ -77,3 +77,8 @@ while ($rowTrainee = $resultThisTrainee->fetch_array(MYSQL_NUM)) {
         </div>
     </div>
 </form>
+
+<script>
+    document.title = "Edit User Information::<?php echo $traineeName; ?>";
+    document.querySelector("#banner-header").innerHTML = "Edit User Information for <em><?php echo $traineeName; ?></em>"
+</script>

@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `trainee` (
   `name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `phone_number` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
-  `ielts_score` decimal(2,2) DEFAULT NULL,
+  `ielts_score` decimal(4,2) DEFAULT NULL,
   `self_description` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

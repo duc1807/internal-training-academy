@@ -1,5 +1,5 @@
 <?php
-require_once("../utils/connect.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/appdev/utils/connect.php");
 
 if (isset($_GET['id'])) {
     $courseId = $_GET['id'];
