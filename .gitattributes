@@ -1,5 +1,6 @@
 * linguist-vendored
-*.php linguist-vendored=false
-*.js linguist-vendored=false
-*.html linguist-vendored=false
-*.sql linguist-vendored=false
+*.php linguist-vendored
+*.js linguist-vendored
+*.html linguist-vendored
+*.sql linguist-vendored
+assets/* -linguist-vendored
