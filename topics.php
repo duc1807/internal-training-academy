@@ -1,6 +1,13 @@
 <?php
 require_once("utils/connect.php");
 
+// RESERVE PAGE ACCESS ONLY FOR TRAINING STAFF
+if ($_SESSION['role'] != 'Training Staff') {
+    header("location: index.php");
+} elseif (empty($_SESSION['role'])) {
+    header("location: index.php");
+}
+
 $queryForAllCourses =
     "SELECT course_topic.id, course_topic.name, course_category.name, course_topic.description
     FROM course_topic

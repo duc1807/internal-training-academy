@@ -16,7 +16,7 @@ require_once("utils/connect.php");
             background-color: #cccccc;
         }
     </style>
-    <title>Create new Topic</title>
+    <title>Create new Category</title>
 </head>
 <body>
 <div class="">

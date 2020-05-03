@@ -127,11 +127,11 @@ CREATE TABLE IF NOT EXISTS `trainee` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `department_id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `phone_number` int(11) NOT NULL,
-  `ielts_score` int(11) DEFAULT NULL,
-  `self_description` int(11) DEFAULT NULL
+  `name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `phone_number` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `ielts_score` decimal(2,2) DEFAULT NULL,
+  `self_description` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -238,6 +238,11 @@ ALTER TABLE `user_role`
 --
 
 --
+-- AUTO_INCREMENT for table `system_user`
+--
+ALTER TABLE `system_user` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
@@ -252,6 +257,16 @@ ALTER TABLE `class_placement`
 --
 ALTER TABLE `topic_delegation`
     MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `trainer`
+--
+ALTER TABLE `trainer` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `trainee`
+--
+ALTER TABLE `trainee` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

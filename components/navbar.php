@@ -20,8 +20,8 @@ if (!isset($_SESSION)) {
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="">Manage Training Staff</a>
-                            <a class="dropdown-item" href="">Manage Trainers</a>
-                            <a class="dropdown-item" href="">Manage Trainees</a>
+                            <a class="dropdown-item" href="trainer_accounts.php">Manage Trainers</a>
+                            <a class="dropdown-item" href="trainee_accounts.php">Manage Trainees</a>
                         </div>
                     </li>
                     <li class="dropdown" id="dropdown-list-courses">

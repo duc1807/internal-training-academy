@@ -1,10 +1,18 @@
 <?php
 require_once("utils/connect.php");
 
+// RESERVE PAGE ACCESS ONLY FOR TRAINING STAFF
+if ($_SESSION['role'] != 'Training Staff') {
+    header("location: index.php");
+} elseif (empty($_SESSION['role'])) {
+    header("location: index.php");
+}
+
 $queryForAllCourses =
     "SELECT course.id, course.name, course_topic.name, course.description
     FROM course
-    INNER JOIN course_topic ON course_topic.id = course.topic_id";
+    INNER JOIN course_topic ON course_topic.id = course.topic_id
+    ORDER BY course.id";
 $result = $conn->query($queryForAllCourses);
 ?>
 

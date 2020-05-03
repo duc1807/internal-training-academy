@@ -1,15 +1,8 @@
 <?php
 require_once("utils/connect.php");
 
-// RESERVE PAGE ACCESS ONLY FOR TRAINING STAFF
-if ($_SESSION['role'] != 'Training Staff') {
-    header("location: index.php");
-} elseif (empty($_SESSION['role'])) {
-    header("location: index.php");
-}
-
-$query = "SELECT * FROM course_category";
-$result = $conn->query($query);
+$queryForDepartments = "SELECT * FROM department";
+$result = $conn->query($queryForDepartments);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +12,7 @@ $result = $conn->query($query);
     <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta name="author" content="Hoang Minh Tu"/>
 
-    <title>Manage Categories</title>
+    <title>Register new Trainee</title>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
@@ -44,7 +37,7 @@ $result = $conn->query($query);
         <div class="row justify-content-center fullscreen align-items-center">
             <div class="col-lg-5 col-md-8 home-banner-left">
                 <h1 class="text-white">
-                    Course Categories Management
+                    Register new Trainee
                 </h1>
                 <p class="mx-auto text-white  mt-20 mb-40"></p>
             </div>
@@ -58,53 +51,48 @@ $result = $conn->query($query);
 
 <!-- ================ Start Feature Area ================= -->
 <section class="feature-area">
-    <div class="container">
+    <div class="container-fluid">
         <div class="feature-inner row">
             <div class="col p-auto">
                 <div class="card mt-5 ml-5 pt-3 pl-3">
-                    <div class="table-responsive card-body" id="all-courses">
-                        <div class="col-md-3 mb-3">
-                            <a class="btn btn-primary btn-block" role="button" href="new_topic.php">
-                                <i class="fa fa-plus-square"></i>
-                                Create New Category
-                            </a>
-                        </div>
-
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                            <tr>
-                                <th>Category ID</th>
-                                <th>Category Name</th>
-                                <th>Description</th>
-                                <th><em>Operational Tasks</em></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            while ($row = $result->fetch_array(MYSQL_NUM)) {
-                                ?>
-                                <tr>
-                                    <td><?php echo $row[0]; ?></td>
-                                    <td><?php echo $row[1]; ?></td>
-                                    <td><em><?php echo $row[2]; ?></em></td>
-                                    <td>
-                                        <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-primary text-white" href="edit_category.php?id=<?php echo $row[0]; ?>">
-                                                Edit
-                                            </a>
-                                        </div>
-                                        <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-danger text-white" href="controllers/delete_category.php?id=<?php echo $row[0]; ?>">
-                                                Delete
-                                            </a>
-                                        </div>
-                                </tr>
-                                <?php
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                        </button>
+                    <div class="card-body">
+                        <form action="controllers/create_trainee.php" method="POST" id="new_trainee">
+                            <div class="row">
+                                <input type="text" class="form-control mb-2 mr-2" placeholder="Full Name" name="name">
+                                <input type="text" class="form-control mb-2 mr-2" placeholder="Account Username" name="username">
+                                <input type="password" class="form-control mb-2" placeholder="Account Password" name="password">
+                            </div>
+                            <div class="row">
+                                <input type="text" class="form-control mb-2 mr-2" placeholder="Email" name="email">
+                                <input type="text" class="form-control mb-2 mr-2" placeholder="Phone Number" name="phone_number">
+                            </div>
+                            <div class="row selector-wrapper">
+                                <select class="custom-select" name="department" form="new_trainee">
+                                    <option selected> Department </option>
+                                    <?php while ($row = $result->fetch_array(MYSQL_NUM)) { ?>
+                                        <option value="<?php echo $row[0]; ?>">
+                                            <?php echo $row[1] . " [" . $row[2] . ']'; ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="row mt-3">
+                                <em>Please note that you can't proceed if all information required hasn't been inputted!</em>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-md-6">
+                                    <a class="btn btn-dark text-white float-left" name="backBtn"
+                                       href="trainee_accounts.php">
+                                        ⮨ Back
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary float-right" name="submit">
+                                        Submit ➦
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
