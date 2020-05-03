@@ -12,7 +12,7 @@ $result = $conn->query($queryForDepartments);
     <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta name="author" content="Hoang Minh Tu"/>
 
-    <title>Register new Trainee</title>
+    <title>Register new Trainer</title>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
@@ -37,7 +37,7 @@ $result = $conn->query($queryForDepartments);
         <div class="row justify-content-center fullscreen align-items-center">
             <div class="col-lg-5 col-md-8 home-banner-left">
                 <h1 class="text-white">
-                    Register new Trainee
+                    Register new Trainer
                 </h1>
                 <p class="mx-auto text-white  mt-20 mb-40"></p>
             </div>
@@ -56,7 +56,7 @@ $result = $conn->query($queryForDepartments);
             <div class="col p-auto">
                 <div class="card mt-5 ml-5 pt-3 pl-3">
                     <div class="card-body">
-                        <form action="controllers/create_trainee.php" method="POST" id="new_trainee">
+                        <form action="controllers/create_trainer.php" method="POST" id="new_trainer">
                             <div class="row">
                                 <input type="text" class="form-control mb-2 mr-2" placeholder="Full Name (*)" name="name">
                                 <input type="text" class="form-control mb-2 mr-2" placeholder="Account Username (*)" name="username">
@@ -66,14 +66,21 @@ $result = $conn->query($queryForDepartments);
                                 <input type="text" class="form-control mb-2 mr-2" placeholder="Email (*)" name="email">
                                 <input type="text" class="form-control mb-2 mr-2" placeholder="Phone Number (*)" name="phone_number">
                             </div>
-                            <div class="row selector-wrapper">
-                                <select class="select" name="department" form="new_trainee">
-                                    <option selected> Department (*) </option>
+                            <div class="row selector-wrapper pt-2">
+                                <select class="select" name="department" form="new_trainer">
+                                    <option selected> Department (optional) </option>
                                     <?php while ($row = $result->fetch_array(MYSQL_NUM)) { ?>
                                         <option value="<?php echo $row[0]; ?>">
                                             <?php echo $row[1] . " [" . $row[2] . ']'; ?>
                                         </option>
                                     <?php } ?>
+                                </select>
+                            </div>
+                            <div class="row selector-wrapper pt-2">
+                                <select class="select" name="is_contractor" form="new_trainer">
+                                    <option selected> Full-time/Contractor? (*)</option>
+                                    <option value="0">Full-time</option>
+                                    <option value="1">Contractor</option>
                                 </select>
                             </div>
                             <div class="row mt-3">
@@ -82,7 +89,7 @@ $result = $conn->query($queryForDepartments);
                             <div class="row pt-3">
                                 <div class="col-md-6">
                                     <a class="btn btn-dark text-white float-left" name="backBtn"
-                                       href="trainee_accounts.php">
+                                       href="trainer_accounts.php">
                                         ⮨ Back
                                     </a>
                                 </div>

@@ -1,26 +1,44 @@
 <?php
 
-require_once("../utils/connect.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/appdev/utils/connect.php");
 
 if (isset($_POST['submit'])) {
-    if (empty($_POST['name']) || empty($_POST['email'])) {
-        echo ' Please Fill in the Blanks ';
+    if (empty($_POST['name']) || empty($_POST['username']) || empty($_POST['password'])
+        || empty($_POST['email']) || empty($_POST['phone_number'])
+    ) {
+        header("location: ../new_trainer.php");
     } else {
-        $UserName = $_POST['name'];
-        $UserEmail = $_POST['email'];
+        $trainerName = $_POST['name'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        $phoneNum = $_POST['phone_number'];
+        $departmentId = $_POST['department'];
+        $isContractor = $_POST['is_contractor'];
 
-        $query = " insert into records (User_Name, User_Email) values('$UserName','$UserEmail')";
-        $result = mysqli_query($conn, $query);
+        $queryInsertUser = "INSERT INTO system_user (user_role_id, username, password)
+                    VALUES (3, '$username', '$password'); ";
 
-        if ($result) {
-            header("location:view_trainer.php");
+        if (!$conn->query($queryInsertUser)) {
+            ?>
+            <script>
+                alert("Something went wrong! Please try again! ");
+            </script>
+            <?php
         } else {
-            echo '  Please Check Your Query ';
+            $user_id = $conn->insert_id;
+            $queryInsertTrainer =
+                "INSERT INTO trainer (user_id, department_id, name, email, phone_number, is_contractor)
+                 VALUE ('$user_id', '$departmentId', '$trainerName', '$email', '$phoneNum', '$isContractor')";
+            if ($conn->query($queryInsertTrainer)) {
+                header("location: ../trainer_accounts.php");
+            } else {
+                header("location: ../new_trainer.php");
+            }
         }
     }
 } else {
-    header("location:register_trainer.php");
+    header("location: ../new_trainer.php");
 }
-
 
 ?>

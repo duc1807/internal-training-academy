@@ -94,12 +94,14 @@ $result = $conn->query($query);
                                     <td><?php echo $row[5] . " [" . $row[6] . ']'; ?></td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-primary text-white" href="edit_user.php?id=<?php echo $row[7]; ?>">
+                                            <a class="btn btn-primary text-white"
+                                               href="edit_user.php?id=<?php echo $row[7]; ?>">
                                                 Edit
                                             </a>
                                         </div>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-danger text-white" href="controllers/delete_trainee.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-danger text-white"
+                                               href="controllers/delete_trainee.php?id=<?php echo $row[0]; ?>">
                                                 Delete
                                             </a>
                                         </div>
@@ -117,17 +119,16 @@ $result = $conn->query($query);
 </section>
 <!-- ================ End Feature Area ================= -->
 
-<!-- ================ start footer Area ================= -->
+<!-- ================ Start Footer Area ================= -->
 <?php include "components/footer.php"; ?>
-<!-- ================ End footer Area ================= -->
+<!-- ================ End Footer Area ================= -->
 
 <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+
 <script src="assets/js/jquery.ajaxchimp.min.js"></script>
 <script src="assets/js/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/parallax.min.js"></script>

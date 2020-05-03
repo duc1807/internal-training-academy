@@ -41,7 +41,7 @@ while ($rowTrainee = $resultThisTrainee->fetch_array(MYSQL_NUM)) {
     </div>
     <div class="row selector-wrapper">
         <label for="depart">Department (*)</label>
-        <select class="custom-select" id="depart" name="department" form="edit_trainee">
+        <select class="select" id="depart" name="department" form="edit_trainee">
             <option selected> Department </option>
             <?php while ($row = $resultDepartments->fetch_array(MYSQL_NUM)) { ?>
                 <option value="<?php echo $row[0]; ?>"

@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `trainee` (
 CREATE TABLE IF NOT EXISTS `trainer` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `department_id` int(11) NOT NULL,
+  `department_id` int(11) DEFAULT NULL,
   `name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `phone_number` varchar(12) COLLATE utf8_unicode_ci NOT NULL,

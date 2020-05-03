@@ -158,7 +158,7 @@ $result = mysqli_query($conn, $query);
         </div>
     </div>
 </div>
-<!-- ================ start footer Area ================= -->
+<!-- ================ Start Footer Area ================= -->
 <footer class="footer-area section-gap">
     <div class="container">
         <div class="row">
@@ -234,15 +234,14 @@ $result = mysqli_query($conn, $query);
         </div>
     </div>
 </footer>
-<!-- ================ End footer Area ================= -->
+<!-- ================ End Footer Area ================= -->
 
 <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+
 <script src="assets/js/jquery.ajaxchimp.min.js"></script>
 <script src="assets/js/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/parallax.min.js"></script>
