@@ -19,7 +19,7 @@ $result = $conn->query($queryForCats);
             background-color: #cccccc;
         }
     </style>
-    <title>Create new Topic</title>
+    <title>Create new Category</title>
 </head>
 <body>
 <div class="">

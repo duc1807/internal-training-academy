@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     if (empty($_POST['id']) || empty($_POST['name']) || empty($_POST['category'])) {
         header("location: ../new_topic.php");
     } else {
+        $thisId = $_GET['id'];
         $topicId = $_POST['id'];
         $topicName = $_POST['name'];
         $catId = $_POST['category'];
@@ -13,11 +14,13 @@ if (isset($_POST['submit'])) {
         $query = "";
 
         if (empty($_POST['desc'])) {
-            $query = "INSERT INTO course_topic (id, category_id, name) 
-                        VALUES ('$topicId', '$catId', '$topicName')";
+            $query = "UPDATE course_topic
+                      SET id = '$topicId', topic_name = 'topicName', category_id = '$catId'
+                      WHERE id = '$thisId'";
         } else {
-            $query = "INSERT INTO course_topic (id, category_id, name, description) 
-                        VALUES ('$topicId', '$catId', '$topicName', '$description')";
+            $query = "UPDATE course_topic
+                      SET id = '$topicId', topic_name = 'topicName', category_id = '$catId', description = '$description'
+                      WHERE id = '$thisId'";
         }
 
         $result = $conn->query($query);

@@ -1,25 +1,40 @@
 <?php
 
-require_once("../utils/connect.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/appdev/utils/connect.php");
 
-if (isset($_POST['update'])) {
-    $TopicID = $_GET['ID'];
-    $TopicName = $_POST['topicname'];
-    $TopicExplain = $_POST['topicexplain'];
-    $TopicDate = $_POST['topicdate'];
-    $TopicExpired = $_POST['topicexpired'];
-
-    $query = " update topic set Topic_Name = '" . $TopicName . "', Topic_Explain ='" . $TopicExplain . "',Topic_Datecreate ='" . $TopicDate . "',Topic_Expired ='" . $TopicExpired . "' where Topic_ID='" . $TopicID . "'";
-    $result = mysqli_query($conn, $query);
-
-    if ($result) {
-        header("location:topics.php");
+if (isset($_POST['submit'])) {
+    if (empty($_POST['id']) || empty($_POST['name'])) {
+        header("location: ../new_category.php");
     } else {
-        echo ' Please Check Your Query ';
+        $thisId = $_GET['id'];
+        $catId = $_POST['id'];
+        $catName = $_POST['name'];
+        $description = $_POST['desc'];
+        $query = "";
+
+        if (empty($_POST['desc'])) {
+            $query = "UPDATE course_category
+                      SET id = '$catId', name = '$catName'
+                      WHERE id = '$thisId'";
+        } else {
+            $query = "UPDATE course_category
+                      SET id = '$catId', name = '$catName', description = '$description'  
+                      WHERE id = '$thisId'";
+        }
+
+        $result = $conn->query($query);
+        if ($result) {
+            header("location: ../categories.php");
+        } else {
+            ?>
+            <script>
+                alert("Something went wrong! Please try again! ");
+            </script>
+            <?php
+        }
     }
 } else {
-    header("location:topics.php");
+    header("location: ../new_category.php");
 }
-
 
 ?>
