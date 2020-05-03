@@ -1,26 +1,38 @@
 <?php
 
-require_once("../utils/connect.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/appdev/utils/connect.php");
 
 if (isset($_POST['submit'])) {
-    if (empty($_POST['coursename']) || empty($_POST['courseclass']) || empty($_POST['coursedate'])) {
-        echo ' Please Fill in the Blanks ';
+    if (empty($_POST['course_id']) || empty($_POST['course_name']) || empty($_POST['topic'])) {
+      header("location: ../new_course.php");
     } else {
-        $CourseName = $_POST['coursename'];
-        $CourseClass = $_POST['courseclass'];
-        $CourseDate = $_POST['coursedate'];
+        $courseId = $_POST['course_id'];
+        $courseName = $_POST['course_name'];
+        $topic_id = $_POST['topic'];
+        $description = $_POST['desc'];
+        $query = "";
 
-        $query = "INSERT INTO course_it (Course_Name, Course_Class, Course_Date) VALUES ('$CourseName','$CourseClass','$CourseDate')";
-        $result = mysqli_query($conn, $query);
-
-        if ($result) {
-            header("location:view_course_it.php");
+        if (empty($_POST['desc'])) {
+            $query = "INSERT INTO course (id, topic_id, name) 
+                        VALUES ('$courseId', '$topic_id', '$courseName')";
         } else {
-            echo '  Please Check Your Query ';
+            $query = "INSERT INTO course (id, topic_id, name, description) 
+                        VALUES ('$courseId', '$topic_id', '$courseName', '$description')";
+        }
+
+        $result = $conn->query($query);
+        if ($result) {
+            header("location: ../courses.php");
+        } else {
+            ?>
+            <script>
+                alert("Something went wrong! Please try again! ");
+            </script>
+<?php
         }
     }
 } else {
-    header("location:register_course.php");
+    header("location: ../new_course.php");
 }
 
 ?>

@@ -50,14 +50,14 @@ session_start();
             </button>
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li><a href="trainer.php">Home</a></li>
+                    <li><a href="trainer_accounts.php">Home</a></li>
                     <!-- Dropdown -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                             attendance
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="attendance.php">GCH0705</a>
+                            <a class="dropdown-item" href="">GCH0705</a>
                             <a class="dropdown-item" href="">GCH0508</a>
                             <a class="dropdown-item" href="">GCH0809</a>
                         </div>
@@ -67,13 +67,13 @@ session_start();
                             topic
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="view_topic.php">GCH0705</a>
+                            <a class="dropdown-item" href="topics.php">GCH0705</a>
                             <a class="dropdown-item" href="">GCH0508</a>
                             <a class="dropdown-item" href="">GCH0809</a>
                         </div>
 
                     </li>
-                    <li><a href="logout.php">logout</a></li>
+                    <li><a href="controllers/logout_handler.php">logout</a></li>
 
                     <li>
                         <button class="search">

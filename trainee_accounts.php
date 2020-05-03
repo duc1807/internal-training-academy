@@ -1,7 +1,7 @@
 <?php
 
 require_once("utils/connect.php");
-$query = " SELECT * FROM course_it ";
+$query = " SELECT * FROM trainee ";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
-
+<body class="records">
 <!-- ================ Start Header Area ================= -->
 <header class="default-header">
     <nav class="navbar navbar-expand-lg  navbar-light">
@@ -60,7 +60,7 @@ $result = mysqli_query($conn, $query);
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li><a href="admin.php">Home</a></li>
-                    <li><a href="view_trainee.php">Trainee</a></li>
+                    <li><a href="trainee_accounts.php">Trainee</a></li>
                     <li><a href="view_trainer.php">Trainer</a></li>
                     <!-- Dropdown -->
                     <li class="dropdown">
@@ -68,13 +68,13 @@ $result = mysqli_query($conn, $query);
                             Course
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="view_course_it.php">IT</a>
+                            <a class="dropdown-item" href="courses.php">IT</a>
                             <a class="dropdown-item" href="course-details.html">Bussiness</a>
                             <a class="dropdown-item" href="elements.html">Graphic Design</a>
                         </div>
 
                     </li>
-                    <li><a href="logout.php">logout</a></li>
+                    <li><a href="controllers/logout_handler.php">logout</a></li>
 
                     <li>
                         <button class="search">
@@ -110,44 +110,38 @@ $result = mysqli_query($conn, $query);
     </div>
 </section>
 <body class="records">
+
 <div class="container">
     <div class="row">
         <div class="col m-auto">
             <div class="card mt-5">
                 <table class="table table-bordered">
                     <tr>
-                        <td> Course ID</td>
-                        <td> Course Name</td>
-                        <td> Course Class</td>
-                        <td> Course Date</td>
+                        <td> User ID</td>
+                        <td> User Name</td>
+                        <td> User Email</td>
                         <td> Edit</td>
                         <td> Delete</td>
                     </tr>
 
                     <?php
-
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $CourseID = $row['Course_ID'];
-                        $CourseName = $row['Course_Name'];
-                        $CourseClass = $row['Course_Class'];
-                        $CourseDate = $row['Course_Date'];
+                        $UserID = $row['User_ID'];
+                        $UserName = $row['User_Name'];
+                        $UserEmail = $row['User_Email'];
                         ?>
                         <tr>
-                            <td><?php echo $CourseID ?></td>
-                            <td><?php echo $CourseName ?> </td>
-                            <td><?php echo $CourseClass ?></td>
-                            <td><?php echo $CourseDate ?></td>
-                            <td><a href="edit_course_it.php?GetID=<?php echo $CourseID ?>">Edit</a></td>
-                            <td><a href="controllers/delete_course_it.php?Del=<?php echo $CourseID ?>">Delete</a></td>
+                            <td><?php echo $UserID ?></td>
+                            <td><?php echo $UserName ?></td>
+                            <td><?php echo $UserEmail ?></td>
+                            <td><a href="edit_trainee.php?GetID=<?php echo $UserID ?>">Edit</a></td>
+                            <td><a href="controllers/delete_trainee.php?Del=<?php echo $UserID ?>">Delete</a></td>
                         </tr>
                         <?php
                     }
                     ?>
-
-
                 </table>
-                <button onclick="location.href='insert_course.php'">Add</button>
-                <li><a href="admin.php">Back to homepage</a></li>
+                <button onclick="location.href='insert_trainee.php'">Add</button>
             </div>
         </div>
     </div>
@@ -252,6 +246,5 @@ $result = mysqli_query($conn, $query);
 
 </body>
 </html>
-
 
 

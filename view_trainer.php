@@ -62,7 +62,7 @@ $result = mysqli_query($conn, $query);
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li><a href="admin.php">Home</a></li>
-                    <li><a href="view_trainee.php">Trainee</a></li>
+                    <li><a href="trainee_accounts.php">Trainee</a></li>
                     <li><a href="view_trainer.php">Trainer</a></li>
                     <!-- Dropdown -->
                     <li class="dropdown">
@@ -70,13 +70,13 @@ $result = mysqli_query($conn, $query);
                             Course
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="view_course_it.php">IT</a>
+                            <a class="dropdown-item" href="courses.php">IT</a>
                             <a class="dropdown-item" href="course-details.html">Bussiness</a>
                             <a class="dropdown-item" href="elements.html">Graphic Design</a>
                         </div>
 
                     </li>
-                    <li><a href="logout.php">logout</a></li>
+                    <li><a href="controllers/logout_handler.php">logout</a></li>
 
                     <li>
                         <button class="search">

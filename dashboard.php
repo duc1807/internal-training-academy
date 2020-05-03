@@ -18,7 +18,7 @@ require_once("utils/db.php");
     <p><a href="insert.php">Insert New Record</a></p>
     <p><a href="view.php">View Records</a>
     <p>
-    <p><a href="logout.php">Logout</a></p>
+    <p><a href="controllers/logout_handler.php">Logout</a></p>
 
 
     <br/><br/><br/><br/>

@@ -2,12 +2,12 @@
 session_start();
 require_once("utils/connect.php");
 
-if (isset($SESSION['role'])) {
-    if ($_SESSION['role'] != 'Admin') {
-        header('location:user.php');
-    } else {
-        header("location:index.php");
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] != 'Training Staff') {
+        header("location: index.php");
     }
+} else {
+    header("location: index.php");
 }
 
 $queryForAllAccounts =
@@ -49,7 +49,7 @@ $result = $conn->query($queryForAllAccounts);
         <div class="row justify-content-center fullscreen align-items-center">
             <div class="col-lg-5 col-md-8 home-banner-left">
                 <h1 class="text-white">
-                    Welcome back, administrator!
+                    Welcome back, <?php echo $_SESSION['username']; ?>!
                 </h1>
                 <p class="mx-auto text-white  mt-20 mb-40"></p>
             </div>
@@ -77,6 +77,7 @@ $result = $conn->query($queryForAllAccounts);
                                 <th>Account ID</th>
                                 <th>Username</th>
                                 <th>Role</th>
+                                <th><em>Operational Tasks</em></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -87,6 +88,10 @@ $result = $conn->query($queryForAllAccounts);
                                     <td><?php echo $row[0]; ?></td>
                                     <td><?php echo $row[1]; ?></td>
                                     <td><?php echo $row[2]; ?></td>
+                                    <td>
+                                        <button class="btn btn-primary">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
                                 </tr>
                                 <?php
                             }

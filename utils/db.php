@@ -5,7 +5,7 @@
 $hostname = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'asm';
+$dbname = 'appdev';
 $port = 3306;
 
 /* ARG:     string representing SQL query

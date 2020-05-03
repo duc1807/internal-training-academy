@@ -17,9 +17,16 @@ while ($row = mysqli_fetch_assoc($result)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" a href="CSS/bootstrap.css"/>
-    <title>Document</title>
+    <link rel="stylesheet" a href="assets/css/bootstrap.css"/>
+    <style>
+        body {
+            background-image: url("https://cdn.suwalls.com/wallpapers/minimalistic/blurry-far-away-lights-51461-2880x1800.jpg");
+            background-color: #cccccc;
+        }
+    </style>
+    <title>Edit Trainee <?php echo courseId; ?></title>
 </head>
 <body class="bg-dark">
 
@@ -28,7 +35,9 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="col-lg-6 m-auto">
             <div class="card mt-5">
                 <div class="card-title">
-                    <h3 class="bg-success text-white text-center py-3"> Update Form in PHP</h3>
+                    <h2 class="bg-primary text-white text-center py-3">
+                        ⊕ Create New Course ⊕
+                    </h2>
                 </div>
                 <div class="card-body">
 

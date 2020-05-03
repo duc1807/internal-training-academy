@@ -1,20 +1,8 @@
 <?php
-session_start();
 require_once("utils/connect.php");
 
-if (isset($SESSION['role'])) {
-    if ($_SESSION['role'] != 'Admin') {
-        header('location:user.php');
-    } else {
-        header("location:index.php");
-    }
-}
-
-$queryForAllAccounts =
-    "SELECT system_user.id, system_user.username, user_role.name 
-    FROM system_user
-    INNER JOIN user_role ON system_user.user_role_id = user_role.id";
-$result = $conn->query($queryForAllAccounts);
+$query = "SELECT * FROM course_category";
+$result = $conn->query($query);
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +12,7 @@ $result = $conn->query($queryForAllAccounts);
     <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta name="author" content="Hoang Minh Tu"/>
 
-    <title>FPT Education</title>
+    <title>Manage Topics</title>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
@@ -49,7 +37,7 @@ $result = $conn->query($queryForAllAccounts);
         <div class="row justify-content-center fullscreen align-items-center">
             <div class="col-lg-5 col-md-8 home-banner-left">
                 <h1 class="text-white">
-                    Welcome back, administrator!
+                    Course Categories Management
                 </h1>
                 <p class="mx-auto text-white  mt-20 mb-40"></p>
             </div>
@@ -67,16 +55,21 @@ $result = $conn->query($queryForAllAccounts);
         <div class="feature-inner row">
             <div class="col p-auto">
                 <div class="card mt-5 ml-5 pt-3 pl-3">
-                    <h2 class="card-title">
-                        All System Accounts
-                    </h2>
-                    <div class="table-responsive card-body" id="all-user-accounts">
+                    <div class="table-responsive card-body" id="all-courses">
+                        <div class="col-md-3 mb-3">
+                            <a class="btn btn-primary btn-block" role="button" href="new_topic.php">
+                                <i class="fa fa-plus-square"></i>
+                                Create New Category
+                            </a>
+                        </div>
+
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
-                                <th>Account ID</th>
-                                <th>Username</th>
-                                <th>Role</th>
+                                <th>Category ID</th>
+                                <th>Category Name</th>
+                                <th>Description</th>
+                                <th><em>Operational Tasks</em></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -86,13 +79,25 @@ $result = $conn->query($queryForAllAccounts);
                                 <tr>
                                     <td><?php echo $row[0]; ?></td>
                                     <td><?php echo $row[1]; ?></td>
-                                    <td><?php echo $row[2]; ?></td>
+                                    <td><em><?php echo $row[2]; ?></em></td>
+                                    <td>
+                                        <div class="utilities-wrapper pb-1">
+                                            <a class="btn btn-primary text-white" href="edit_category.php?id=<?php echo $row[0]; ?>">
+                                                Edit
+                                            </a>
+                                        </div>
+                                        <div class="utilities-wrapper pb-1">
+                                            <a class="btn btn-danger text-white" href="controllers/delete_category.php?id=<?php echo $row[0]; ?>">
+                                                Delete
+                                            </a>
+                                        </div>
                                 </tr>
                                 <?php
                             }
                             ?>
                             </tbody>
                         </table>
+                        </button>
                     </div>
                 </div>
             </div>

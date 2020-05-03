@@ -8,12 +8,12 @@ if (isset($_GET['Del'])) {
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        header("location:view_trainee.php");
+        header("location:trainee_accounts.php");
     } else {
         echo ' Please Check Your Query ';
     }
 } else {
-    header("location:view_trainee.php");
+    header("location:trainee_accounts.php");
 }
 
 
