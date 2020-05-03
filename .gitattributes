@@ -1,6 +1,5 @@
 * linguist-vendored
-*.php linguist-vendored
-*.js linguist-vendored
-*.html linguist-vendored
-*.sql linguist-vendored
-assets/* -linguist-vendored
+*.php -linguist-vendored
+*.js -linguist-vendored
+*.html -linguist-vendored
+*.sql -linguist-vendored
