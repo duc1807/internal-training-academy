@@ -87,19 +87,19 @@ $result = $conn->query($queryForAllClasses);
                                     <td><?php echo "($row[1]) $row[2]"; ?></td>
                                     <td><?php echo "($row[3]) $row[4]"; ?></td>
                                     <td><span id="student-info"></span></td>
-                                    <td class="pb-1">
-                                        <div class="utilities-wrapper">
-                                            <a class="btn-flat text-white" href="class_details?id=<?php echo $row[0]; ?>"
+                                    <td>
+                                        <div class="utilities-wrapper pb-1">
+                                            <a class="btn btn-outline-info btn-sm" href="class_details?id=<?php echo $row[0]; ?>">
                                                 See Details
                                             </a>
                                         </div>
-                                        <div class="utilities-wrapper">
-                                            <a class="btn btn-primary text-white" href="edit_class.php?id=<?php echo $row[0]; ?>">
-                                                Edit
+                                        <div class="utilities-wrapper pb-1">
+                                            <a class="btn btn-outline-primary btn-sm" href="edit_class.php?id=<?php echo $row[0]; ?>">
+                                                Edit Class Student
                                             </a>
                                         </div>
-                                        <div class="utilities-wrapper">
-                                            <a class="btn btn-danger text-white" href="controllers/delete_class.php?id=<?php echo $row[0]; ?>">
+                                        <div class="utilities-wrapper pb-1">
+                                            <a class="btn btn-outline-danger btn-sm" href="controllers/delete_class.php?id=<?php echo $row[0]; ?>">
                                                 Delete
                                             </a>
                                         </div>
@@ -123,6 +123,7 @@ $result = $conn->query($queryForAllClasses);
 <script>
     // Stringify student <span> tag
     let listOfStudents = [];
+    let studentString = "";
 
     <?php
         $queryStudents =
@@ -133,10 +134,9 @@ $result = $conn->query($queryForAllClasses);
              WHERE class_id='$thisClassId'";
         $resultStudents = $conn->query($queryStudents);
 
-        while ($rowStd = $resultStudents->fetch_array(MYSQL_NUM)) {
-            $studentToString = "($rowStd[0]) $rowStd[1] [$rowStd[2] - $rowStd[3]]";
-            ?>
-    listOfStudents.push("<?php echo $studentToString; ?>");
+        while ($rowStd = $resultStudents->fetch_array(MYSQL_NUM)) { ?>
+    studentString = `(<?php echo $rowStd[0]; ?>) <?php echo $rowStd[1]; ?> <em><?php echo "[$rowStd[2] - $rowStd[3]]"; ?></em>`;
+    listOfStudents.push(studentString);
             <?php
         };
     ?>

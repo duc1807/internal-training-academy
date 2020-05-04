@@ -1,13 +1,6 @@
 <?php
 require_once("utils/connect.php");
 
-// RESERVE PAGE ACCESS ONLY FOR TRAINING STAFF
-if ($_SESSION['role'] != 'Training Staff') {
-    header("location: index.php");
-} elseif (empty($_SESSION['role'])) {
-    header("location: index.php");
-}
-
 $queryForAllCourses =
     "SELECT course_topic.id, course_topic.name, course_category.name, course_topic.description
     FROM course_topic
@@ -94,12 +87,12 @@ $result = $conn->query($queryForAllCourses);
                                     <td><em><?php echo $row[3]; ?></em></td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-primary text-white" href="edit_topic.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-primary btn-sm" href="edit_topic.php?id=<?php echo $row[0]; ?>">
                                                 Edit
                                             </a>
                                         </div>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-danger text-white" href="controllers/delete_topic.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-danger btn-sm" href="controllers/delete_topic.php?id=<?php echo $row[0]; ?>">
                                                 Delete
                                             </a>
                                         </div>

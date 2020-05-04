@@ -88,12 +88,12 @@ $result = $conn->query($queryForAllCourses);
                                     <td><em><?php echo $row[3]; ?></em></td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-primary text-white" href="edit_course.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-primary btn-sm" href="edit_course.php?id=<?php echo $row[0]; ?>">
                                                 Edit
                                             </a>
                                         </div>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-danger text-white" href="controllers/delete_course.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-danger btn-sm" href="controllers/delete_course.php?id=<?php echo $row[0]; ?>">
                                                 Delete
                                             </a>
                                         </div>

@@ -98,12 +98,12 @@ $result = $conn->query($query);
                                     <td><?php if ($row[8]) { echo "Contractor"; } else {echo "Full-time"; } ?></td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-primary text-white" href="edit_user.php?id=<?php echo $row[7]; ?>">
+                                            <a class="btn btn-outline-primary btn-sm" href="edit_user.php?id=<?php echo $row[7]; ?>">
                                                 Edit
                                             </a>
                                         </div>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-danger text-white" href="controllers/delete_trainer.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-danger btn-sm" href="controllers/delete_trainer.php?id=<?php echo $row[0]; ?>">
                                                 Delete
                                             </a>
                                         </div>
