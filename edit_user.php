@@ -27,7 +27,7 @@ $resultDepartments = $conn->query($queryForDepartments);
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
     <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
-    <link rel="stylesheet" href="assets/css/nice-select.css">
+
     <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -54,7 +54,7 @@ $resultDepartments = $conn->query($queryForDepartments);
         </div>
     </div>
 </section>
-<!-- ================ End banner Area ================= -->
+<!-- ================ End Banner Area ================= -->
 
 <!-- ================ Start Feature Area ================= -->
 <section class="feature-area">
@@ -94,7 +94,7 @@ $resultDepartments = $conn->query($queryForDepartments);
 <script src="assets/js/hexagons.min.js"></script>
 <script src="assets/js/jquery.counterup.min.js"></script>
 <script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
+
 <script src="assets/js/main.js"></script>
 </body>
 

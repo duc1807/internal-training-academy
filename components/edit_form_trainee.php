@@ -21,36 +21,48 @@ while ($rowTrainee = $resultThisTrainee->fetch_array(MYSQL_NUM)) {
 ?>
 <form action="controllers/update_trainee.php?user_id=<?php echo $trainee_user_id; ?>" method="POST" id="edit_trainee">
     <div class="row">
-        <label for="fullname">Full Name (*)</label>
-        <input type="text" class="form-control mb-2 mr-2" id="fullname"
-               name="name" value="<?php echo $traineeName; ?>">
-        <label for="username">Account Username (*)</label>
-        <input type="text" class="form-control mb-2 mr-2" id="username"
-               name="username" value="<?php echo $username; ?>">
-        <label for="password">Account Password (*)</label>
-        <input type="password" class="form-control mb-2" id="password"
-               name="password" value="<?php echo $password; ?>">
+        <div class="form-group">
+            <label for="fullname">Full Name (*)</label>
+            <input type="text" class="form-control mb-2 mr-2" id="fullname"
+                   name="name" value="<?php echo $traineeName; ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="username">Account Username (*)</label>
+            <input type="text" class="form-control mb-2 mr-2" id="username"
+                   name="username" value="<?php echo $username; ?>">
+        </div>
+        <div class="form-group">
+            <label for="password">Account Password (*)</label>
+            <input type="password" class="form-control mb-2" id="password"
+                   name="password" value="<?php echo $password; ?>">
+        </div>
     </div>
     <div class="row">
         <label for="email">Email (*)</label>
         <input type="text" class="form-control mb-2 mr-2" id="email"
-                name="email" value="<?php echo $email; ?>">
+               name="email" value="<?php echo $email; ?>">
         <label for="phone">Phone Number (*)</label>
         <input type="text" class="form-control mb-2 mr-2" id="phone"
                name="phone_number" value="<?php echo $phoneNum; ?>">
     </div>
-    <div class="row selector-wrapper">
-        <label for="depart">Department (*)</label>
-        <select class="select" id="depart" name="department" form="edit_trainee">
-            <option selected> Department </option>
-            <?php while ($row = $resultDepartments->fetch_array(MYSQL_NUM)) { ?>
-                <option value="<?php echo $row[0]; ?>"
-                    <?php if ($row[0] == $selectedDepartmentId) { ?> selected <?php }; ?>
-                >
-                    <?php echo $row[1] . " [" . $row[2] . ']'; ?>
-                </option>
-            <?php } ?>
-        </select>
+    <div class="row">
+        <div class="row selector-wrapper pt-2 ml-2">
+            <div class="form-group">
+                <label for="depart">Department (*)</label>
+                <select class="select form-control" id="depart" name="department" form="edit_trainee">
+                    <option selected> Department</option>
+                    <?php while ($row = $resultDepartments->fetch_array(MYSQL_NUM)) { ?>
+                        <option value="<?php echo $row[0]; ?>"
+                            <?php if ($row[0] == $selectedDepartmentId) { ?> selected <?php }; ?>
+                        >
+                            <?php echo $row[1] . " [" . $row[2] . ']'; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="row">
         <label for="ielts">IELTS Score (optional)</label>

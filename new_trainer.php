@@ -20,7 +20,7 @@ $result = $conn->query($queryForDepartments);
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
     <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
-    <link rel="stylesheet" href="assets/css/nice-select.css">
+
     <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -47,7 +47,7 @@ $result = $conn->query($queryForDepartments);
         </div>
     </div>
 </section>
-<!-- ================ End banner Area ================= -->
+<!-- ================ End Banner Area ================= -->
 
 <!-- ================ Start Feature Area ================= -->
 <section class="feature-area">
@@ -67,7 +67,7 @@ $result = $conn->query($queryForDepartments);
                                 <input type="text" class="form-control mb-2 mr-2" placeholder="Phone Number (*)" name="phone_number">
                             </div>
                             <div class="row selector-wrapper pt-2">
-                                <select class="select" name="department" form="new_trainer">
+                                <select class="select form-control" name="department" form="new_trainer">
                                     <option selected> Department (optional) </option>
                                     <?php while ($row = $result->fetch_array(MYSQL_NUM)) { ?>
                                         <option value="<?php echo $row[0]; ?>">
@@ -77,7 +77,7 @@ $result = $conn->query($queryForDepartments);
                                 </select>
                             </div>
                             <div class="row selector-wrapper pt-2">
-                                <select class="select" name="is_contractor" form="new_trainer">
+                                <select class="select form-control" name="is_contractor" form="new_trainer">
                                     <option selected> Full-time/Contractor? (*)</option>
                                     <option value="0">Full-time</option>
                                     <option value="1">Contractor</option>
@@ -124,7 +124,7 @@ $result = $conn->query($queryForDepartments);
 <script src="assets/js/hexagons.min.js"></script>
 <script src="assets/js/jquery.counterup.min.js"></script>
 <script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
+
 <script src="assets/js/main.js"></script>
 </body>
 

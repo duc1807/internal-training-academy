@@ -20,8 +20,8 @@ if (!isset($_SESSION)) {
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="">Manage Training Staff</a>
-                            <a class="dropdown-item" href="trainer_accounts.php">Manage Trainers</a>
-                            <a class="dropdown-item" href="trainee_accounts.php">Manage Trainees</a>
+                            <a class="dropdown-item" href="./trainer_accounts.php">Manage Trainers</a>
+                            <a class="dropdown-item" href="./trainee_accounts.php">Manage Trainees</a>
                         </div>
                     </li>
                     <li class="dropdown" id="dropdown-list-courses">
@@ -29,9 +29,11 @@ if (!isset($_SESSION)) {
                             Courses
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="courses.php">Manage Courses</a>
-                            <a class="dropdown-item" href="categories.php">Manage Categories</a>
-                            <a class="dropdown-item" href="topics.php">Manage Topics</a>
+                            <a class="dropdown-item" href="./courses.php">
+                                Manage Courses
+                            </a>
+                            <a class="dropdown-item" href="./categories.php">Manage Categories</a>
+                            <a class="dropdown-item" href="./topics.php">Manage Topics</a>
                         </div>
                     </li>
                     <li class="dropdown" id="dropdown-list-classes">
@@ -48,7 +50,7 @@ if (!isset($_SESSION)) {
                             Organise
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="">Organise Classes</a>
+                            <a class="dropdown-item" href="classes.php">Organise Classes</a>
                             <a class="dropdown-item" href="#">Assign Topic to Trainer</a>
                         </div>
                     </li>

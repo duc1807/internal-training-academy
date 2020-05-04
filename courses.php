@@ -1,13 +1,6 @@
 <?php
 require_once("utils/connect.php");
 
-// RESERVE PAGE ACCESS ONLY FOR TRAINING STAFF
-if ($_SESSION['role'] != 'Training Staff') {
-    header("location: index.php");
-} elseif (empty($_SESSION['role'])) {
-    header("location: index.php");
-}
-
 $queryForAllCourses =
     "SELECT course.id, course.name, course_topic.name, course.description
     FROM course
@@ -31,7 +24,7 @@ $result = $conn->query($queryForAllCourses);
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
     <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
-    <link rel="stylesheet" href="assets/css/nice-select.css">
+
     <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -58,7 +51,7 @@ $result = $conn->query($queryForAllCourses);
         </div>
     </div>
 </section>
-<!-- ================ End banner Area ================= -->
+<!-- ================ End Banner Area ================= -->
 
 <!-- ================ Start Feature Area ================= -->
 <section class="feature-area">
@@ -135,7 +128,7 @@ $result = $conn->query($queryForAllCourses);
 <script src="assets/js/hexagons.min.js"></script>
 <script src="assets/js/jquery.counterup.min.js"></script>
 <script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
+
 <script src="assets/js/main.js"></script>
 </body>
 

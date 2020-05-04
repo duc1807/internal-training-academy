@@ -27,40 +27,50 @@ while ($rowTrainer = $resultThisTrainer->fetch_array(MYSQL_NUM)) {
         <label for="username">Account Username (*)</label>
         <input type="text" class="form-control mb-2 mr-2" id="username"
                name="username" value="<?php echo $username; ?>">
-        <label for="password">Account Password (*)</label>
-        <input type="password" class="form-control mb-2" id="password"
-               name="password" value="<?php echo $password; ?>">
-    </div>
-    <div class="row">
-        <label for="email">Email (*)</label>
-        <input type="text" class="form-control mb-2 mr-2" id="email"
-               name="email" value="<?php echo $email; ?>">
-        <label for="phone">Phone Number (*)</label>
-        <input type="text" class="form-control mb-2 mr-2" id="phone"
-               name="phone_number" value="<?php echo $phoneNum; ?>">
-    </div>
-    <div class="row">
-        <div class="row selector-wrapper pt-2 ml-2">
-            <label class="col-form-label mr-3" for="depart">Department (*)</label>
-            <select class="select" id="depart" name="department" form="edit_trainer">
-                <option selected> Department</option>
-                <?php while ($row = $resultDepartments->fetch_array(MYSQL_NUM)) { ?>
-                    <option value="<?php echo $row[0]; ?>"
-                        <?php if ($row[0] == $selectedDepartmentId) { ?> selected <?php }; ?>
-                    >
-                        <?php echo $row[1] . " [" . $row[2] . ']'; ?>
-                    </option>
-                <?php } ?>
-            </select>
+        <div class="form-group">
+            <label for="password">Account Password (*)</label>
+            <input type="password" class="form-control mb-2" id="password"
+                   name="password" value="<?php echo $password; ?>">
         </div>
     </div>
     <div class="row">
-        <div class="row selector-wrapper pt-2 ml-2 pb-2">
-            <label class="col-form-label mr-3" for="is-contractor">Full-time/Contractor? (*)</label>
-            <select class="select" name="is_contractor" id="is-contractor" form="edit_trainer">
-                <option value="0" <?php if ($isContractor == 0) { ?> selected <?php }; ?>>Full-time</option>
-                <option value="1" <?php if ($isContractor == 1) { ?> selected <?php }; ?>>Contractor</option>
-            </select>
+        <div class="form-group">
+            <label for="email">Email (*)</label>
+            <input type="text" class="form-control mb-2 mr-2" id="email"
+                   name="email" value="<?php echo $email; ?>">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number (*)</label>
+            <input type="text" class="form-control mb-2 mr-2" id="phone"
+                   name="phone_number" value="<?php echo $phoneNum; ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="row selector-wrapper pt-2 ml-2">
+            <div class="form-group">
+                <label class="col-form-label mr-3" for="depart">Department (*)</label>
+                <select class="select form-control" id="depart" name="department" form="edit_trainer">
+                    <option selected> Department</option>
+                    <?php while ($row = $resultDepartments->fetch_array(MYSQL_NUM)) { ?>
+                        <option value="<?php echo $row[0]; ?>"
+                            <?php if ($row[0] == $selectedDepartmentId) { ?> selected <?php }; ?>
+                        >
+                            <?php echo $row[1] . " [" . $row[2] . ']'; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="row selector-wrapper pt-2 ml-2 pb-2">
+                <label class="col-form-label mr-3" for="is-contractor">Full-time/Contractor? (*)</label>
+                <select class="select form-control" name="is_contractor" id="is-contractor" form="edit_trainer">
+                    <option value="0" <?php if ($isContractor == 0) { ?> selected <?php }; ?>>Full-time</option>
+                    <option value="1" <?php if ($isContractor == 1) { ?> selected <?php }; ?>>Contractor</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="row selector-wrapper">

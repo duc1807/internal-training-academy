@@ -3,7 +3,6 @@ session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . "/appdev/utils/connect.php");
 
 $warning_message = "Please re-check your login credentials!";
-$role = "";
 
 if (isset($_POST["btnLogin"])) {
     $username = $_POST["user"];
@@ -16,29 +15,29 @@ if (isset($_POST["btnLogin"])) {
 
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            if ($row["user_role_id"] == "1") {
+            if ($row["user_role_id"] == 1) {
                 $_SESSION['user_id'] = $row["id"];
                 $_SESSION['username'] = $row["username"];
                 $_SESSION['role'] = "Admin";
                 header('location: admin.php');
             }
-            if ($row["user_role_id"] == "2") {
+            elseif ($row["user_role_id"] == 2) {
                 $_SESSION['user_id'] = $row["id"];
                 $_SESSION['username'] = $row["username"];
                 $_SESSION['role'] = "Training Staff";
-                header('location: admin.php');
+                header('location: staff_homepage.php');
             }
-            if ($row["user_role_id"] == "3") {
+            elseif ($row["user_role_id"] == 3) {
                 $_SESSION['user_id'] = $row["id"];
                 $_SESSION['username'] = $row["username"];
                 $_SESSION['role'] = "Trainer";
-                header('location: admin.php');
+                header('location: trainer_homepage.php');
             }
-            if ($row["user_role_id"] == "4") {
+            elseif ($row["user_role_id"] == 4) {
                 $_SESSION['user_id'] = $row["id"];
                 $_SESSION['username'] = $row["username"];
                 $_SESSION['role'] = "Trainee";
-                header('location: admin.php');
+                header('location: trainee_homepage.php');
             }
         }
     } else {

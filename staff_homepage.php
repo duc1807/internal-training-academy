@@ -2,14 +2,6 @@
 session_start();
 require_once("utils/connect.php");
 
-if (isset($_SESSION['role'])) {
-    if ($_SESSION['role'] != 'Training Staff') {
-        header("location: index.php");
-    }
-} else {
-    header("location: index.php");
-}
-
 $queryForAllAccounts =
     "SELECT system_user.id, system_user.username, user_role.name 
     FROM system_user
@@ -24,7 +16,7 @@ $result = $conn->query($queryForAllAccounts);
     <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta name="author" content="Hoang Minh Tu"/>
 
-    <title>FPT Education</title>
+    <title>FPT Education <?php echo $_SESSION['role']; ?></title>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
@@ -32,7 +24,7 @@ $result = $conn->query($queryForAllAccounts);
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
     <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
-    <link rel="stylesheet" href="assets/css/nice-select.css">
+
     <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -59,7 +51,7 @@ $result = $conn->query($queryForAllAccounts);
         </div>
     </div>
 </section>
-<!-- ================ End banner Area ================= -->
+<!-- ================ End Banner Area ================= -->
 
 <!-- ================ Start Feature Area ================= -->
 <section class="feature-area">
@@ -77,7 +69,6 @@ $result = $conn->query($queryForAllAccounts);
                                 <th>Account ID</th>
                                 <th>Username</th>
                                 <th>Role</th>
-                                <th><em>Operational Tasks</em></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -88,10 +79,6 @@ $result = $conn->query($queryForAllAccounts);
                                     <td><?php echo $row[0]; ?></td>
                                     <td><?php echo $row[1]; ?></td>
                                     <td><?php echo $row[2]; ?></td>
-                                    <td>
-                                        <button class="btn btn-primary">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                    </td>
                                 </tr>
                                 <?php
                             }
@@ -122,7 +109,7 @@ $result = $conn->query($queryForAllAccounts);
 <script src="assets/js/hexagons.min.js"></script>
 <script src="assets/js/jquery.counterup.min.js"></script>
 <script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
+
 <script src="assets/js/main.js"></script>
 </body>
 

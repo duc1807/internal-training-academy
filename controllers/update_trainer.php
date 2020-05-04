@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     $desc = $_POST['desc'];
 
     if (empty($trainerName) || empty($username) || empty($password)
-        || empty($email) || empty($phoneNum) || empty($isContractor)
+        || empty($email) || empty($phoneNum)
     ) {
         header("location: ../edit_user.php?id=" . $userId);
     }
