@@ -1,5 +1,10 @@
 <?php
+session_start();
 require_once("utils/connect.php");
+
+if ($_SESSION['user_role'] != 'Admin' || $_SESSION['user_role'] != 'Training Staff') {
+    header("location: ./index.php");
+}
 
 $query =
     "SELECT trainee.id, trainee.name, system_user.username, trainee.email, 

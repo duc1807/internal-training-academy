@@ -1,5 +1,11 @@
 <?php
+session_start();
 require_once("utils/connect.php");
+
+if ($_SESSION['role'] != 'Training Staff') {
+    header("location: ./index.php");
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,10 @@
 <?php
+session_start();
+
 require_once("utils/connect.php");
+if ($_SESSION['role'] != 'Training Staff') {
+    header("location: ./index.php");
+}
 
 $queryForCats = "SELECT id, name FROM course_category";
 $result = $conn->query($queryForCats);

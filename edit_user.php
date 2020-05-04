@@ -1,6 +1,16 @@
 <?php
+session_start();
+
 require_once("utils/connect.php");
 $thisUserId = $_GET['id'];
+
+if ($_SESSION['user_id'] != $thisUserId) {
+    if ($_SESSION['role'] != 'Training Staff' || $_SESSION['role'] != 'Admin') {
+        header("location: ./index.php");
+    }
+}
+
+
 $queryFindRole = "SELECT user_role_id FROM system_user WHERE id = $thisUserId";
 $resultRowQuery = $conn->query($queryFindRole);
 

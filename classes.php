@@ -1,5 +1,10 @@
 <?php
+session_start();
 require_once("utils/connect.php");
+
+if ($_SESSION['user_role'] != 'Training Staff') {
+    header("location: ./index.php");
+}
 
 $queryForAllClasses =
     "SELECT class.id, course.id, course.name, trainer.id, trainer.name

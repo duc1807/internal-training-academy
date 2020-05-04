@@ -2,6 +2,10 @@
 session_start();
 require_once("utils/connect.php");
 
+if ($_SESSION['user_role'] != 'Training Staff') {
+    header("location: ./index.php");
+}
+
 $queryForAllAccounts =
     "SELECT system_user.id, system_user.username, user_role.name 
     FROM system_user

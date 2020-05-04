@@ -4,8 +4,6 @@ require_once("utils/connect.php");
 
 if (isset($SESSION['role'])) {
     if ($_SESSION['role'] != 'Admin') {
-        header('location:user.php');
-    } else {
         header("location:index.php");
     }
 }

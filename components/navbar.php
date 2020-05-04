@@ -1,8 +1,3 @@
-<?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-?>
 <header class="default-header">
     <nav class="navbar navbar-expand-lg navbar-inverse">
         <div class="container">
@@ -59,7 +54,7 @@ if (!isset($_SESSION)) {
                             <i class="fa fa-user-circle"></i><?php echo $_SESSION['username']; ?>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="profile.php">Profile</a>
+                            <a class="dropdown-item" href="./edit_user.php?id=<?php echo $_SESSION['user_id']; ?>">Profile</a>
                             <a class="dropdown-item" href="controllers/logout_handler.php">Log Out</a>
                         </div>
                     </li>

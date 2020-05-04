@@ -3,6 +3,10 @@ session_start();
 require_once("utils/connect.php");
 $thisId = $_SESSION['user_id'];
 
+if ($_SESSION['user_role'] != 'Trainer') {
+    header("location: ./index.php");
+}
+
 $queryName = "SELECT trainer.name, trainer.id 
               FROM trainer
               INNER JOIN system_user su ON trainer.user_id = su.id

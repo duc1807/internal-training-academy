@@ -1,5 +1,10 @@
 <?php
+session_start();
 require_once("utils/connect.php");
+
+if ($_SESSION['role'] != 'Training Staff' || $_SESSION['role'] != 'Admin') {
+    header("location: ./index.php");
+}
 
 $queryForDepartments = "SELECT * FROM department";
 $result = $conn->query($queryForDepartments);

@@ -1,5 +1,11 @@
 <?php
+session_start();
+
 require_once("utils/connect.php");
+
+if ($_SESSION['role'] != 'Training Staff') {
+    header("location: ./index.php");
+}
 
 $queryAllCourses =
     "SELECT course.id, course.name, course_topic.name 
@@ -45,7 +51,9 @@ $resTrainees = $conn->query($queryAllTrainees);
 
 <body>
 <!-- ================ Start Header Area ================= -->
-<?php include "components/navbar.php"; ?>
+<?php
+include "components/navbar.php";
+?>
 <!-- ================ End Header Area ================= -->
 
 <!-- ================ Start Banner Area ================= -->

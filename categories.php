@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("utils/connect.php");
 
 $query = "SELECT * FROM course_category";

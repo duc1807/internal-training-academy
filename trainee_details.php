@@ -1,5 +1,10 @@
 <?php
+session_start();
 require_once("utils/connect.php");
+
+if ($_SESSION['user_role'] != 'Trainee') {
+    header("location: ./index.php");
+}
 
 $thisId = $_GET['id'];
 
