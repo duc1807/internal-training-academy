@@ -1,10 +1,26 @@
 # Internal Training Academy
 
-This is code submission for assignment 2 of *Application Development* course.
+This project is my code submission for Unit 30-*Application Development* course of [Pearson BTEC Higher National Diploma in Computing Level 5](https://qualifications.pearson.com/en/qualifications/btec-higher-nationals.html) qualification. 
 
-## Notes and comments
-- Development of this application is strongly reliant on `Apache HTTP Server`, `MySQL` server & `PHPMyAdmin` DBMS provided by `XAMPP`. For this reason, these configurations defined in [`db.php`](utils/db.php) and [`connect.php`](utils/connect.php) are defined exclusively for `PHPMyAdmin`.
-- The latest version of `XAMPP` contains `MariaDB` instead of `MySQL`. Follow [this instruction](https://odan.github.io/2017/08/13/xampp-replacing-mariadb-with-mysql.html) to get `MySQL` back. Otherwise, I personally recommend using `XAMPP` v5.6.11 (which includes `MySQL` Community Server 5.6.25) below.
+## Screenshots
 
-### Project File Structure
+![Front-end screenshots](/docs/screenshots/screenshots.gif)
+
+## System Design
+
+![ERD](/docs/ERD(transparent).png)
+
+![Use Case Diagram](/docs/use_case_diagram.png)
+
+## Dependencies
+- Development of this application relied on these technologies: 
+    - PHP 5.4
+    - Apache Server 2.4
+    - MySQL 5.5 
+    
+## Project File Structure
+- [`assets` folder](./assets): web assets
+- SQL files in [`sql` folder](./sql): `schema.sql` provides schema of this database, `data.sql` provides mock data. 
+- [`utils` folder](./utils): PHP-to-MySQL connection initialisation
 - Regarding *CRUD* operations: controllers for *Create*, *Update* and *Remove* operations are in [`controllers` folder](./controllers).
+- [`components` folder](./components): embedded in-page PHP components

@@ -2,7 +2,7 @@
 session_start();
 require_once("utils/connect.php");
 
-if ($_SESSION['user_role'] != 'Trainee') {
+if ($_SESSION['role'] != 'Trainee') {
     header("location: ./index.php");
 }
 
@@ -41,8 +41,8 @@ $thisDesc = $row[7];
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
     <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>
-    <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
-    <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+
+
 
     <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
@@ -148,12 +148,12 @@ $thisDesc = $row[7];
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 
 <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
+
 <script src="assets/js/parallax.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
+
 <script src="assets/js/jquery.sticky.js"></script>
 <script src="assets/js/hexagons.min.js"></script>
-<script src="assets/js/jquery.counterup.min.js"></script>
+
 <script src="assets/js/waypoints.min.js"></script>
 
 <script src="assets/js/main.js"></script>
