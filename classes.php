@@ -89,13 +89,8 @@ $result = $conn->query($queryForAllClasses);
                                     <td><span id="student-info"></span></td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-outline-info btn-sm" href="class_details?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-info btn-sm" href="class_details.php?id=<?php echo $row[0]; ?>">
                                                 See Details
-                                            </a>
-                                        </div>
-                                        <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-outline-primary btn-sm" href="edit_class.php?id=<?php echo $row[0]; ?>">
-                                                Edit Class Student
                                             </a>
                                         </div>
                                         <div class="utilities-wrapper pb-1">

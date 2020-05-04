@@ -1,12 +1,29 @@
 <?php
 require_once("utils/connect.php");
 
-$queryForAllCourses =
-    "SELECT course.id, course.name, course_topic.name, course.description
-    FROM course
-    INNER JOIN course_topic ON course_topic.id = course.topic_id
-    ORDER BY course.id";
-$result = $conn->query($queryForAllCourses);
+$thisId = $_GET['id'];
+
+$query =
+    "SELECT course.name, course_topic.name, cc.name, course.description
+     FROM course
+     LEFT JOIN course_topic ON course_topic.id = course.topic_id
+     LEFT JOIN course_category cc ON course_topic.category_id = cc.id
+     WHERE course.id = '$thisId';";
+
+$queryActiveClass =
+    "SELECT class.id, trainer.name
+     FROM class
+     INNER JOIN trainer ON class.trainer_id = trainer.id
+     WHERE course_id = '$thisId'";
+
+$resThis = $conn->query($query);
+$resThisClasses = $conn->query($queryActiveClass);
+
+$row = $resThis->fetch_array(MYSQL_NUM);
+
+$thisName = $row[0];
+$thisTopicName = "$row[1] ($row[2])";
+$thisDesc = $row[3];
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +33,7 @@ $result = $conn->query($queryForAllCourses);
     <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta name="author" content="Hoang Minh Tu"/>
 
-    <title>Manage Courses</title>
+    <title>Details of Course ID <?php echo $thisId; ?></title>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
@@ -41,7 +58,7 @@ $result = $conn->query($queryForAllCourses);
         <div class="row justify-content-center fullscreen align-items-center">
             <div class="col-lg-5 col-md-8 home-banner-left">
                 <h1 class="text-white">
-                    Course Management
+                    Course Details
                 </h1>
                 <p class="mx-auto text-white  mt-20 mb-40"></p>
             </div>
@@ -54,64 +71,54 @@ $result = $conn->query($queryForAllCourses);
 <!-- ================ End Banner Area ================= -->
 
 <!-- ================ Start Feature Area ================= -->
-<section class="feature-area">
+<section class="feature-area text-dark">
     <div class="container">
         <div class="feature-inner row">
             <div class="col p-auto">
                 <div class="card mt-5 ml-5 pt-3 pl-3">
-                    <div class="table-responsive card-body" id="all-courses">
-                        <div class="col-md-3 mb-3">
-                            <a class="btn btn-primary btn-block" role="button" href="new_course.php">
-                                <i class="fa fa-plus-square"></i>
-                                Create New Course
-                            </a>
-                        </div>
-
-                        <table class="table table-hover table-bordered">
-                            <thead>
+                    <div class="table-responsive card-body">
+                        <table class="table">
+                            <tbody class="text-dark">
                             <tr>
-                                <th>Course ID</th>
-                                <th>Course Name</th>
-                                <th>Course Topic</th>
-                                <th>Description</th>
-                                <th><em>Operational Tasks</em></th>
+                                <td><h5 class=" font-weight-bold text-dark">Course ID</h5></td>
+                                <td>
+                                    <?php echo $thisId; ?>
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            while ($row = $result->fetch_array(MYSQL_NUM)) {
-                                ?>
-                                <tr>
-                                    <td><?php echo $row[0]; ?></td>
-                                    <td><?php echo $row[1]; ?></td>
-                                    <td><?php echo $row[2]; ?></td>
-                                    <td><em><?php echo $row[3]; ?></em></td>
-                                    <td>
-                                        <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-outline-info btn-sm" href="course_details.php?id=<?php echo $row[0]; ?>">
-                                                See Details
-                                            </a>
-                                        </div>
-                                        <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-outline-primary btn-sm" href="edit_course.php?id=<?php echo $row[0]; ?>">
-                                                Edit
-                                            </a>
-                                        </div>
-                                        <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-outline-danger btn-sm" href="controllers/delete_course.php?id=<?php echo $row[0]; ?>">
-                                                Delete
-                                            </a>
-                                        </div>
-                                </tr>
-                                <?php
-                            }
-                            ?>
+                            <tr>
+                                <td><h5 class=" font-weight-bold text-dark">Course Name</h5></td>
+                                <td>
+                                    <?php echo $thisName; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><h5 class=" font-weight-bold text-dark">Topic (Name & Its Category)</h5></td>
+                                <td>
+                                    <?php echo $thisTopicName; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><h5 class=" font-weight-bold text-dark">Description</h5></td>
+                                <td>
+                                    <?php echo $thisDesc; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><h5 class="font-weight-bold text-dark">Active Classes (Class ID & Trainer)</h5></td>
+                                <td>
+                                    <?php while ($rowClass = $resThisClasses->fetch_array(MYSQL_NUM)) { ?>
+                                        <a href="class_details.php?id=<?php echo $rowClass[0]; ?>">
+                                            (<?php echo $rowClass[0]; ?>) - <?php echo $rowClass[1];?>
+                                        </a>
+                                        <br/>
+                                    <?php }; ?>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
-                    </button>
+                    </div>
                 </div>
             </div>
-        </div>
 </section>
 <!-- ================ End Feature Area ================= -->
 

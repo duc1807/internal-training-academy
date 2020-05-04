@@ -98,6 +98,11 @@ $result = $conn->query($query);
                                     <td><?php if ($row[8]) { echo "Contractor"; } else {echo "Full-time"; } ?></td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
+                                            <a class="btn btn-outline-info btn-sm" href="trainer_details.php?id=<?php echo $row[0]; ?>">
+                                                See Details
+                                            </a>
+                                        </div>
+                                        <div class="utilities-wrapper pb-1">
                                             <a class="btn btn-outline-primary btn-sm" href="edit_user.php?id=<?php echo $row[7]; ?>">
                                                 Edit
                                             </a>

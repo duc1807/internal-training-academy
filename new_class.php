@@ -125,7 +125,12 @@ $resTrainees = $conn->query($queryAllTrainees);
                                 </div>
                             </div>
                             <div class="pb-2">
-                                <em>Please note that you can't proceed if all information required hasn't been inputted!</em>
+                                <em>Please note that:
+                                    <ul>
+                                        <li>• you can't proceed if all information required hasn't been inputted!</li>
+                                        <li>• once this class is put into the system, you can't update it.</li>
+                                    </ul>
+                                </em>
                             </div>
                             <div class="row pt-3">
                                 <div class="col-md-6">

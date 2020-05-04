@@ -95,6 +95,12 @@ $result = $conn->query($query);
                                     <td><?php echo $row[5] . " [" . $row[6] . ']'; ?></td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
+                                            <a class="btn btn-outline-info btn-sm"
+                                               href="trainee_details.php?id=<?php echo $row[0]; ?>">
+                                                See Details
+                                            </a>
+                                        </div>
+                                        <div class="utilities-wrapper pb-1">
                                             <a class="btn btn-outline-primary btn-sm"
                                                href="edit_user.php?id=<?php echo $row[7]; ?>">
                                                 Edit

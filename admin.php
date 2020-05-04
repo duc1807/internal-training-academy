@@ -24,7 +24,7 @@ $result = $conn->query($queryForAllAccounts);
     <link rel="shortcut icon" href="assets/img/fav.ico"/>
     <meta name="author" content="Hoang Minh Tu"/>
 
-    <title>FPT Education</title>
+    <title>Internal Training Academy :: </title>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/linearicons.css"/>
