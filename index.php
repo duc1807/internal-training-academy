@@ -84,7 +84,11 @@ if (isset($_SESSION['role']) && isset($_SESSION['user_id'])) {
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <div class="navbar-header"><a class="navbar-brand" href="index.html">Internal Training Academy</a></div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://github.com/mnhthng-thms/internal-training-academy">
+                Internal Training Academy
+            </a>
+        </div>
     </div>
 </nav>
 <div class="row">
