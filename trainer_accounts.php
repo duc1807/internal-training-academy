@@ -2,7 +2,8 @@
 session_start();
 require_once("utils/connect.php");
 
-if ($_SESSION['role'] != 'Admin' || $_SESSION['role'] != 'Training Staff') {
+
+if (($_SESSION["role"] != "Admin") && ($_SESSION["role"] != "Training Staff")) {
     header("location: ./index.php");
 }
 
