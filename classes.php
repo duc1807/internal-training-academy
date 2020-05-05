@@ -30,7 +30,6 @@ $result = $conn->query($queryForAllClasses);
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>
 
 
-
     <link rel="stylesheet" href="assets/css/hexagons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -88,18 +87,54 @@ $result = $conn->query($queryForAllClasses);
                             while ($row = $result->fetch_array(MYSQL_NUM)) {
                                 ?>
                                 <tr>
-                                    <td><?php $thisClassId = $row[0]; echo $thisClassId; ?></td>
+                                    <td><?php $thisClassId = $row[0];
+                                        echo $thisClassId; ?></td>
                                     <td><?php echo "($row[1]) $row[2]"; ?></td>
                                     <td><?php echo "($row[3]) $row[4]"; ?></td>
-                                    <td><span id="student-info"></span></td>
+                                    <td>
+                                        <span class="student-info" id="std-<?php echo $thisClassId?>"></span>
+                                        <script>
+                                            // Stringify student <span> tag
+                                            listOfStudents = [];
+                                            studentString = "";
+
+                                            <?php
+                                            $queryStudents =
+                                                "SELECT class_placement.student_id, trainee.name, d.name, d.location 
+                                                 FROM class_placement 
+                                                 INNER JOIN trainee ON trainee.id = class_placement.student_id
+                                                 INNER JOIN department d ON trainee.department_id = d.id
+                                                 WHERE class_id='$thisClassId'";
+                                            $resultStudents = $conn->query($queryStudents);
+
+                                            while ($rowStd = $resultStudents->fetch_array(MYSQL_NUM)) { ?>
+                    studentString = `(<?php echo $rowStd[0]; ?>) <?php echo $rowStd[1]; ?> <em><?php echo "[$rowStd[2] - $rowStd[3]]"; ?></em>`;
+                    listOfStudents.push(studentString);
+                                            <?php
+                                            };
+                                            ?>
+
+                    if (listOfStudents.length == 0) {
+                        document.querySelector(".student-info#std-<?php echo $thisClassId; ?>").innerHTML = "No one yet";
+                    } else if ((listOfStudents.length > 0) && (listOfStudents.length <= 3)) {
+                        document.querySelector(".student-info#std-<?php echo $thisClassId; ?>").innerHTML = listOfStudents.join("; ");
+                    } else {
+                        let stdsToString = listOfStudents.slice(0, 3).join("; ");
+                        stdsToString += ` and ${listOfStudents.length - 3} more`;
+                        document.querySelector(".student-info#std-<?php echo $thisClassId; ?>").innerHTML = stdsToString;
+                    }
+                                        </script>
+                                    </td>
                                     <td>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-outline-info btn-sm" href="class_details.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-info btn-sm"
+                                               href="class_details.php?id=<?php echo $row[0]; ?>">
                                                 See Details
                                             </a>
                                         </div>
                                         <div class="utilities-wrapper pb-1">
-                                            <a class="btn btn-outline-danger btn-sm" href="controllers/delete_class.php?id=<?php echo $row[0]; ?>">
+                                            <a class="btn btn-outline-danger btn-sm"
+                                               href="controllers/delete_class.php?id=<?php echo $row[0]; ?>">
                                                 Delete
                                             </a>
                                         </div>
@@ -120,37 +155,6 @@ $result = $conn->query($queryForAllClasses);
 <?php include "components/footer.php"; ?>
 <!-- ================ End Footer Area ================= -->
 
-<script>
-    // Stringify student <span> tag
-    let listOfStudents = [];
-    let studentString = "";
-
-    <?php
-        $queryStudents =
-            "SELECT class_placement.student_id, trainee.name, d.name, d.location 
-             FROM class_placement 
-             INNER JOIN trainee ON trainee.id = class_placement.student_id
-             INNER JOIN department d ON trainee.department_id = d.id
-             WHERE class_id='$thisClassId'";
-        $resultStudents = $conn->query($queryStudents);
-
-        while ($rowStd = $resultStudents->fetch_array(MYSQL_NUM)) { ?>
-    studentString = `(<?php echo $rowStd[0]; ?>) <?php echo $rowStd[1]; ?> <em><?php echo "[$rowStd[2] - $rowStd[3]]"; ?></em>`;
-    listOfStudents.push(studentString);
-            <?php
-        };
-    ?>
-
-    if (listOfStudents.length == 0) {
-        document.querySelector("#student-info").innerHTML = "No one yet";
-    } else if ((listOfStudents.length > 0) && (listOfStudents.length <= 3)) {
-        document.querySelector("#student-info").innerHTML = listOfStudents.join("; ");
-    } else {
-        let stdsToString = listOfStudents.slice(0,3).join("; ");
-        stdsToString += ` and ${listOfStudents.length - 3} more`;
-        document.querySelector("#student-info").innerHTML = stdsToString;
-    }
-</script>
 
 <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"

@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . "/appdev/utils/connect.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/utils/connect.php");
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['id']) || empty($_POST['name'])) {

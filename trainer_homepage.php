@@ -97,12 +97,12 @@ $res = $conn->query($queryAssignedClasses);
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="./course_details.php?id=<?php echo $row[0]; ?>">
+                                        <a href="./course_details.php?id=<?php echo $row[1]; ?>">
                                             <?php echo "$row[1]"; ?>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="./course_details.php?id=<?php echo $row[3]; ?>">
+                                        <a href="./course_details.php?id=<?php echo $row[1]; ?>">
                                             <?php echo "$row[2] ($row[3])"; ?>
                                         </a>
                                     </td>

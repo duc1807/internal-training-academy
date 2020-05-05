@@ -15,11 +15,11 @@ if (isset($_POST['submit'])) {
 
         if (empty($_POST['desc'])) {
             $query = "UPDATE course_topic
-                      SET id = '$topicId', topic_name = 'topicName', category_id = '$catId'
+                      SET id = '$topicId', name = '$topicName', category_id = '$catId'
                       WHERE id = '$thisId'";
         } else {
             $query = "UPDATE course_topic
-                      SET id = '$topicId', topic_name = 'topicName', category_id = '$catId', description = '$description'
+                      SET id = '$topicId', name = '$topicName', category_id = '$catId', description = '$description'
                       WHERE id = '$thisId'";
         }
 

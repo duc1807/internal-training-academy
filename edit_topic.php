@@ -45,7 +45,7 @@ while ($row = $result->fetch_array(MYSQL_ASSOC)) {
                     <h3 class="bg-success text-white text-center py-3">Edit Topic</h3>
                 </div>
                 <div class="card-body">
-                    <form action="controllers/update_course.php?id=<?php echo $topicId; ?>" method="POST"
+                    <form action="controllers/update_topic.php?id=<?php echo $topicId; ?>" method="POST"
                           id="edit-topic">
                         <label for="topic-id">Topic ID (integer)</label>
                         <input type="text" class="form-control mb-2" id="topic-id" name="id"

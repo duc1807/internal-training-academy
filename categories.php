@@ -58,7 +58,7 @@ $result = $conn->query($query);
                 <div class="card mt-5 ml-5 pt-3 pl-3">
                     <div class="table-responsive card-body" id="all-courses">
                         <div class="col-md-3 mb-3">
-                            <a class="btn btn-primary btn-block" role="button" href="new_topic.php">
+                            <a class="btn btn-primary btn-block" role="button" href="new_category.php">
                                 <i class="fa fa-plus-square"></i>
                                 Create New Category
                             </a>
