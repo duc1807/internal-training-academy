@@ -23,4 +23,13 @@ This project is my code submission for Unit 30-*Application Development* course 
 - SQL files in [`sql` folder](./sql): `schema.sql` provides schema of this database, `data.sql` provides mock data. 
 - [`utils` folder](./utils): PHP-to-MySQL connection initialisation
 - Regarding *CRUD* operations: controllers for *Create*, *Update* and *Remove* operations are in [`controllers` folder](./controllers).
-- [`components` folder](./components): embedded in-page PHP components
+- [`components` folder](./components): embedded in-page PHP components.
+
+## Legal
+
+This source code is licensed under [MIT License](https://github.com/mnhthng-thms/internal-training-academy/blob/master/LICENSE.md). Copyright © 2020 [MinhTu Thomas Hoang](https://github.com/mnhthng-thms).
+
+In short:
+
+- The author permits reusing this source code for any purposes, including commercial and for-profit ones, on condition that the copies of this source code _must_ include a MIT copyright notice. (This project has also been benefited from other MIT-licensed open source technologies.)
+- The author is not responsible for any possible malicious uses of this source code.
